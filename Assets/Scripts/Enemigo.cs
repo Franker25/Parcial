@@ -81,7 +81,7 @@ public class Enemigo : MonoBehaviour
             Vector3 direccion = (jugador.transform.position - transform.position).normalized;
             RaycastHit impacto;
 
-            if (Physics.Raycast(transform.position, direccion, out impacto, rango))
+            if (Physics.Raycast(transform.position, direccion, out impacto, rango, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
             {
                 Jugador jugadorImpactado = impacto.collider.GetComponent<Jugador>();
 
